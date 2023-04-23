@@ -1,3 +1,3 @@
-g++ -std=gnu++17 -o src/main -Ilib/ -Ilib/ac-library src/main.cpp -DDEBUG_BUILD
+g++ -std=gnu++17 -Wall -Wextra -o $1 -Ilib/ -Ilib/ac-library $1.cpp -DDEBUG_BUILD
 
-./src/main
+./$1
