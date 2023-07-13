@@ -5,9 +5,9 @@ else
 fi
 timeCpp=`date +%Y%m%d%H%M%S -r $1.cpp`
 if [ $timeCpp -ge $timeExe ]; then
-    echo "Compiling..."
+    echo "Compiling..." >&2
     g++ -std=gnu++17 -O2 -Wall -Wextra -o $1 -Ilib/ -Ilib/ac-library $1.cpp
-    echo "Compiled!"
+    echo "Compiled!" >&2
 fi
-echo "Run:"
+echo "Run:" >&2
 ./$1
