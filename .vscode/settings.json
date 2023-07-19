@@ -96,6 +96,7 @@
         "valarray": "cpp",
         "variant": "cpp",
         "vector": "cpp",
-        "all": "cpp"
+        "all": "cpp",
+        "internal_bit": "cpp"
     }
 }
