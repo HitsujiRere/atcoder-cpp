@@ -31,7 +31,7 @@ struct UnionFindTree {
     int treeSize(int x) { return sizes[findRoot(x)]; }
 
     // 重さを求める
-    int weight(int x) {
+    T weight(int x) {
         compress();
         return diffweights[x];
     }
