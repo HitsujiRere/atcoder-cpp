@@ -6,7 +6,7 @@
 // include all std
 #include <bits/stdc++.h>
 
-// AtCoder Library v1.4
+// AtCoder Library v1.5.1
 // https://github.com/atcoder/ac-library
 #include <atcoder/all>
 

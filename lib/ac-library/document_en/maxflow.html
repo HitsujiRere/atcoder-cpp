@@ -79,18 +79,21 @@
 (2) Cap graph.flow(int s, int t, Cap flow_limit);
 </code></pre>
 <ul>
-<li>It augments the flow from $s$ to $t$ as much as possible. It returns the amount of the flow augmented.</li>
+<li>(1) It augments the flow from $s$ to $t$ as much as possible. It returns the amount of the flow augmented.</li>
+<li>(2) It augments the flow from $s$ to $t$ as much as possible, until reaching the amount of <code>flow_limit</code>. It returns the amount of the flow augmented.</li>
 <li>You may call it multiple times. See <a href="./appendix.html">Appendix</a> for further details.</li>
 </ul>
 <p><strong>Constraints</strong></p>
 <ul>
 <li>$s \neq t$</li>
+<li>$0 \leq s, t \lt n$</li>
 <li>The answer should be in <code>Cap</code>.</li>
 </ul>
 <p><strong>Complexity</strong></p>
 <ul>
-<li>$O(\min(n^{\frac{2}{3}}m, m^{\frac{3}{2}}))$ (if all the capacities are $1$) or</li>
-<li>$O(n^2 m)$ (general),</li>
+<li>$O((n + m) \sqrt{m})$ (if all the capacities are $1$),</li>
+<li>$O(n^2 m)$ (general), or</li>
+<li>$O(F(n + m))$, where $F$ is the returned value</li>
 </ul>
 <p>where $m$ is the number of added edges.</p>
 <h2>min_cut</h2>
