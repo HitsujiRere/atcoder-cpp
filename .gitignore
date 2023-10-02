@@ -1,5 +1,5 @@
-src/main
-src/small
+src/main*
+src/small*
 
 src/abc*/
 src/problems/
