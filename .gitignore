@@ -1,7 +1,6 @@
-src/main*
-src/small*
+src/**/*_pro
+src/**/*_dev
 
 src/abc*/
-src/problems/
 src/ahc*/
 src/moja/
