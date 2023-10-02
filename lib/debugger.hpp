@@ -38,11 +38,11 @@
 
 #define debug_os1(val) #val << " : " << (val)
 #define debug_os2(val, ...) \
-#val << ": " << (val) << " | " << debug_os1(__VA_ARGS__)
+    #val << ": " << (val) << " | " << debug_os1(__VA_ARGS__)
 #define debug_os3(val, ...) \
-#val << ": " << (val) << " | " << debug_os2(__VA_ARGS__)
+    #val << ": " << (val) << " | " << debug_os2(__VA_ARGS__)
 #define debug_os4(val, ...) \
-#val << ": " << (val) << " | " << debug_os3(__VA_ARGS__)
+    #val << ": " << (val) << " | " << debug_os3(__VA_ARGS__)
 
 void write_tab(int tab) {
     while (tab > 0) {
@@ -103,6 +103,21 @@ std::ostream &operator<<(std::ostream &os, const std::set<T> &data) {
 }
 
 template <class T>
+std::ostream &operator<<(std::ostream &os, const std::unordered_set<T> &data) {
+    if (data.empty()) {
+        return os << "{ }";
+    }
+    auto dataItr = data.begin();
+    os << "{" << *dataItr;
+    ++dataItr;
+    for (; dataItr != data.end(); ++dataItr) {
+        os << ", " << *dataItr;
+    }
+    os << "}";
+    return os;
+}
+
+template <class T>
 std::ostream &operator<<(std::ostream &os, const std::multiset<T> &data) {
     if (data.empty()) {
         return os << "{ }";
@@ -127,6 +142,21 @@ std::ostream &operator<<(std::ostream &os, const std::map<Key, T> &data) {
     ++dataItr;
     for (; dataItr != data.end(); ++dataItr) {
         os << ", " << *dataItr;
+    }
+    os << "}";
+    return os;
+}
+
+template <class S, class T, class U>
+std::ostream &operator<<(std::ostream &os, std::priority_queue<S, T, U> data) {
+    if (data.empty()) {
+        return os << "{ }";
+    }
+    os << "{" << data.top();
+    data.pop();
+    while (!data.empty()) {
+        os << ", " << data.top();
+        data.pop();
     }
     os << "}";
     return os;
