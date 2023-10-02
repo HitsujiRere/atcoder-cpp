@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
 int main() {
-    auto start = chrono::system_clock::now();
-    auto end = chrono::system_clock::now();
-    auto msec =
-        chrono::duration_cast<chrono::milliseconds>(end - start).count();
+    chrono::time_point start = chrono::system_clock::now();
+    chrono::time_point end = chrono::system_clock::now();
+    ll msec = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 
     return 0;
 }
