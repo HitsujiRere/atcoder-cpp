@@ -1,5 +1,5 @@
 // check Overflow
-#ifdef DEBUG_BUILD
+#ifdef DEJI_VALID_DEBUGGER
 #define _GLIBCXX_DEBUG
 #endif
 
@@ -11,7 +11,7 @@
 #include <atcoder/all>
 
 // debugger
-#ifdef DEBUG_BUILD
+#ifdef DEJI_VALID_DEBUGGER
 #include "debugger.hpp"
 #else
 #define debug(...)
@@ -50,12 +50,12 @@ constexpr array<ll, 8> DY8 = {0, 1, 1, 1, 0, -1, -1, -1};
 
 // new vector
 template <class T>
-vec2<T> newVec2(size_t A, size_t B, T a = T()) {
-    return vec2<T>(A, vec<T>(B, a));
+vec2<T> newVec2(size_t n2, size_t n1, T x = T()) {
+    return vec2<T>(n2, vec<T>(n1, x));
 }
 template <class T>
-vec3<T> newVec3(size_t A, size_t B, size_t C, T a = T()) {
-    return vec3<T>(A, vec2<T>(B, vec<T>(C, a)));
+vec3<T> newVec3(size_t n3, size_t n2, size_t n1, T x = T()) {
+    return vec3<T>(n3, vec2<T>(n2, vec<T>(n1, x)));
 }
 
 // input
@@ -87,19 +87,8 @@ bool chmin(T &a, const T b) {
     }
     return false;
 }
-ll powll(ll x, ll n) {
-    ll ret = 1;
-    while (n > 0) {
-        if (n & 1) ret *= x;
-        x *= x;
-        n >>= 1;
-    }
-    return ret;
-}
 
 /*****/
-
-constexpr int MOD = 1000000007;
 
 void Main() {}
 
