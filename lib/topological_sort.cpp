@@ -2,8 +2,7 @@
 using namespace std;
 
 template <class T>
-void topological_sort_dfs(const vector<vector<T>> &graph, int from,
-                          vector<bool> &visited, vector<T> &result) {
+void topological_sort_dfs(const vector<vector<T>> &graph, int from, vector<bool> &visited, vector<T> &result) {
     visited[from] = true;
 
     for (const auto &to : graph[from]) {

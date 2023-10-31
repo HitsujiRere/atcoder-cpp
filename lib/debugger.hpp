@@ -147,6 +147,22 @@ std::ostream &operator<<(std::ostream &os, const std::map<Key, T> &data) {
     return os;
 }
 
+template <class Key, class T>
+std::ostream &operator<<(std::ostream &os,
+                         const std::unordered_map<Key, T> &data) {
+    if (data.empty()) {
+        return os << "{ }";
+    }
+    auto dataItr = data.begin();
+    os << "{" << *dataItr;
+    ++dataItr;
+    for (; dataItr != data.end(); ++dataItr) {
+        os << ", " << *dataItr;
+    }
+    os << "}";
+    return os;
+}
+
 template <class S, class T, class U>
 std::ostream &operator<<(std::ostream &os, std::priority_queue<S, T, U> data) {
     if (data.empty()) {

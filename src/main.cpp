@@ -6,8 +6,7 @@
 // include all std
 #include <bits/stdc++.h>
 
-// AtCoder Library v1.5.1
-// https://github.com/atcoder/ac-library
+// AtCoder Library v1.5.1; https://github.com/atcoder/ac-library
 #include <atcoder/all>
 
 // debugger
@@ -38,8 +37,7 @@ using vec2 = std::vector<vec<T>>;
 template <class T>
 using vec3 = std::vector<vec2<T>>;
 template <class T>
-using priority_greater_queue =
-    std::priority_queue<T, std::vector<T>, std::greater<T>>;
+using priority_greater_queue = std::priority_queue<T, std::vector<T>, std::greater<T>>;
 
 // number alias
 constexpr ll INFL = std::numeric_limits<ll>::max() / 4;

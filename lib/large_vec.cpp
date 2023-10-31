@@ -10,7 +10,6 @@ vec4<T> newVec4(size_t n4, size_t n3, size_t n2, size_t n1, T x = T()) {
     return vec4<T>(n4, vec3<T>(n3, vec2<T>(n2, vec<T>(n1, x))));
 }
 template <class T>
-vec5<T> newVec5(size_t n5, size_t n4, size_t n3, size_t n2, size_t n1,
-                T x = T()) {
+vec5<T> newVec5(size_t n5, size_t n4, size_t n3, size_t n2, size_t n1, T x = T()) {
     return vec5<T>(n5, vec4<T>(n4, vec3<T>(n3, vec2<T>(n2, vec<T>(n1, x)))));
 }
