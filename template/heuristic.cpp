@@ -20,8 +20,8 @@
 #endif
 
 // for alias
-#define range(i, A, B) for (ll i = (ll)(A); i < (ll)(B); i++)
-#define rrange(i, A, B) for (ll i = (ll)(B)-1; i >= (ll)(A); i--)
+#define range(i, A, B) for (ll i = (ll)(A); i < (ll)(B); ++i)
+#define rrange(i, A, B) for (ll i = (ll)(B)-1; i >= (ll)(A); --i)
 #define rep(i, N) range(i, 0, N)
 #define rrep(i, N) rrange(i, 0, N)
 
@@ -68,6 +68,11 @@ std::istream &operator>>(std::istream &is, std::pair<T, U> &data) {
 }
 
 // functions
+template <class T>
+std::vector<T> &operator--(std::vector<T> &data) {
+    for (T &x : data) x--;
+    return data;
+}
 string yes_no(bool x) { return x ? "Yes" : "No"; }
 template <class T>
 bool chmax(T &a, const T b) {
