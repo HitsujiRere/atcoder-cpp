@@ -48,24 +48,20 @@ constexpr array<ll, 8> DY8 = {0, 1, 1, 1, 0, -1, -1, -1};
 
 // new vector
 template <class T>
-vec2<T> newVec2(size_t n2, size_t n1, T x = T()) {
-    return vec2<T>(n2, vec<T>(n1, x));
-}
+vec2<T> newvec2(size_t n2, size_t n1, T x = T()) { return vec2<T>(n2, vec<T>(n1, x)); }
 template <class T>
-vec3<T> newVec3(size_t n3, size_t n2, size_t n1, T x = T()) {
-    return vec3<T>(n3, vec2<T>(n2, vec<T>(n1, x)));
-}
+vec3<T> newvec3(size_t n3, size_t n2, size_t n1, T x = T()) { return vec3<T>(n3, vec2<T>(n2, vec<T>(n1, x))); }
 
-// input
+// input/output
 template <class T>
 std::istream &operator>>(std::istream &is, std::vector<T> &data) {
     for (T &in : data) is >> in;
     return is;
 }
 template <class T, class U>
-std::istream &operator>>(std::istream &is, std::pair<T, U> &data) {
-    return is >> data.first >> data.second;
-}
+std::istream &operator>>(std::istream &is, std::pair<T, U> &data) { return is >> data.first >> data.second; }
+std::ostream &operator<<(std::ostream &os, atcoder::modint998244353 data) { return os << data.val(); }
+std::ostream &operator<<(std::ostream &os, atcoder::modint1000000007 data) { return os << data.val(); }
 
 // functions
 template <class T>
