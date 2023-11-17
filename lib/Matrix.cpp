@@ -7,7 +7,8 @@ struct Matrix {
     vector<vector<T>> A;
     Matrix(const vector<vector<T>> &A) : A(A) {
         assert(A.size() >= 1 && A[0].size() >= 1);
-        assert(all_of(A.begin(), A.end(), [&](const vector<T> &a) { return A[0].size() == a.size(); }));
+        assert(all_of(A.begin(), A.end(),
+                      [&](const vector<T> &a) { return A[0].size() == a.size(); }));
     }
     Matrix(size_t n, size_t m) : A(n, vector<T>(m, 0)) { assert(n >= 1 && m >= 1); }
     Matrix(size_t n) : A(n, vector<T>(n, 0)) { assert(n >= 1); };
@@ -24,16 +25,14 @@ struct Matrix {
         assert(height() == B.height() && width() == B.width());
         size_t n = height(), m = width();
         for (int i = 0; i < n; i++)
-            for (int j = 0; j < m; j++)
-                (*this)[i][j] += B[i][j];
+            for (int j = 0; j < m; j++) (*this)[i][j] += B[i][j];
         return *this;
     }
     Matrix &operator-=(const Matrix &B) {
         assert(height() == B.height() && width() == B.width());
         size_t n = height(), m = width();
         for (int i = 0; i < n; i++)
-            for (int j = 0; j < m; j++)
-                (*this)[i][j] -= B[i][j];
+            for (int j = 0; j < m; j++) (*this)[i][j] -= B[i][j];
         return *this;
     }
     Matrix &operator*=(const Matrix &B) {
@@ -42,8 +41,7 @@ struct Matrix {
         vector<vector<T>> C(n, vector<T>(m, 0));
         for (size_t i = 0; i < n; i++)
             for (size_t j = 0; j < m; j++)
-                for (size_t k = 0; k < p; k++)
-                    C[i][j] = (C[i][j] + (*this)[i][k] * B[k][j]);
+                for (size_t k = 0; k < p; k++) C[i][j] = (C[i][j] + (*this)[i][k] * B[k][j]);
         A.swap(C);
         return *this;
     }

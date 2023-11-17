@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 
 // Debug variables
-#define debug(...)                                                \
-    std::cerr << "DEBUG " << __func__ << ":" << __LINE__ << " | " \
-              << debug_os(__VA_ARGS__) << std::endl
+#define debug(...)                                                                         \
+    std::cerr << "DEBUG " << __func__ << ":" << __LINE__ << " | " << debug_os(__VA_ARGS__) \
+              << std::endl
 
 // Run in debug-mode
 #define debugdo(...) \
@@ -19,14 +19,13 @@
     } while (0)
 
 // Test x == y
-#define test_eq(x, y)                                                     \
-    do {                                                                  \
-        const auto X = (x);                                               \
-        const auto Y = (y);                                               \
-        if (X != Y)                                                       \
-            std::cerr << "ERROR " << __func__ << ":" << __LINE__ << " | " \
-                      << #x << ": " << X << " != " << #y << ": " << Y     \
-                      << std::endl;                                       \
+#define test_eq(x, y)                                                                        \
+    do {                                                                                     \
+        const auto X = (x);                                                                  \
+        const auto Y = (y);                                                                  \
+        if (X != Y)                                                                          \
+            std::cerr << "ERROR " << __func__ << ":" << __LINE__ << " | " << #x << ": " << X \
+                      << " != " << #y << ": " << Y << std::endl;                             \
     } while (0)
 
 /*****/
@@ -37,12 +36,9 @@
     (__VA_ARGS__)
 
 #define debug_os1(val) #val << " : " << (val)
-#define debug_os2(val, ...) \
-    #val << ": " << (val) << " | " << debug_os1(__VA_ARGS__)
-#define debug_os3(val, ...) \
-    #val << ": " << (val) << " | " << debug_os2(__VA_ARGS__)
-#define debug_os4(val, ...) \
-    #val << ": " << (val) << " | " << debug_os3(__VA_ARGS__)
+#define debug_os2(val, ...) #val << ": " << (val) << " | " << debug_os1(__VA_ARGS__)
+#define debug_os3(val, ...) #val << ": " << (val) << " | " << debug_os2(__VA_ARGS__)
+#define debug_os4(val, ...) #val << ": " << (val) << " | " << debug_os3(__VA_ARGS__)
 
 void write_tab(int tab) {
     while (tab > 0) {
@@ -59,7 +55,7 @@ std::ostream &operator<<(std::ostream &os, const std::pair<T, U> &val) {
 template <class T>
 std::ostream &operator<<(std::ostream &os, const std::vector<T> &data) {
     if (data.empty()) {
-        return os << "{ }";
+        return os << "{}";
     }
     os << "{";
     for (size_t i = 0; i < data.size(); ++i) {
@@ -90,7 +86,7 @@ std::ostream &operator<<(std::ostream &os, const std::array<T, N> &data) {
 template <class T>
 std::ostream &operator<<(std::ostream &os, const std::set<T> &data) {
     if (data.empty()) {
-        return os << "{ }";
+        return os << "{}";
     }
     auto dataItr = data.begin();
     os << "{" << *dataItr;
@@ -105,7 +101,7 @@ std::ostream &operator<<(std::ostream &os, const std::set<T> &data) {
 template <class T>
 std::ostream &operator<<(std::ostream &os, const std::unordered_set<T> &data) {
     if (data.empty()) {
-        return os << "{ }";
+        return os << "{}";
     }
     auto dataItr = data.begin();
     os << "{" << *dataItr;
@@ -120,7 +116,7 @@ std::ostream &operator<<(std::ostream &os, const std::unordered_set<T> &data) {
 template <class T>
 std::ostream &operator<<(std::ostream &os, const std::multiset<T> &data) {
     if (data.empty()) {
-        return os << "{ }";
+        return os << "{}";
     }
     auto dataItr = data.begin();
     os << "{" << *dataItr;
@@ -135,7 +131,7 @@ std::ostream &operator<<(std::ostream &os, const std::multiset<T> &data) {
 template <class Key, class T>
 std::ostream &operator<<(std::ostream &os, const std::map<Key, T> &data) {
     if (data.empty()) {
-        return os << "{ }";
+        return os << "{}";
     }
     auto dataItr = data.begin();
     os << "{" << *dataItr;
@@ -148,10 +144,9 @@ std::ostream &operator<<(std::ostream &os, const std::map<Key, T> &data) {
 }
 
 template <class Key, class T>
-std::ostream &operator<<(std::ostream &os,
-                         const std::unordered_map<Key, T> &data) {
+std::ostream &operator<<(std::ostream &os, const std::unordered_map<Key, T> &data) {
     if (data.empty()) {
-        return os << "{ }";
+        return os << "{}";
     }
     auto dataItr = data.begin();
     os << "{" << *dataItr;
@@ -166,7 +161,7 @@ std::ostream &operator<<(std::ostream &os,
 template <class S, class T, class U>
 std::ostream &operator<<(std::ostream &os, std::priority_queue<S, T, U> data) {
     if (data.empty()) {
-        return os << "{ }";
+        return os << "{}";
     }
     os << "{" << data.top();
     data.pop();
