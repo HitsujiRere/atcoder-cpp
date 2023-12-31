@@ -6,7 +6,7 @@ mkdir -p $2/out/
 echo -n > $2/results.txt
 for dir in $dirs;
 do
-    echo "-----"
-    echo $dir "->" $2/out/${dir##*/}
-    ./$1_pro < $dir > $2/out/${dir##*/} 2>> $1_pro_results.txt
+    echo "-----" >> $2/results.txt
+    echo $dir "->" $2/out/${dir##*/} >> $2/results.txt
+    ./$1_pro < $dir > $2/out/${dir##*/} 2>> $2/results.txt
 done

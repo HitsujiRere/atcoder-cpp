@@ -30,6 +30,8 @@ template <class T> using vec = vector<T>;
 template <class T> using vec2 = vector<vec<T>>;
 template <class T> using vec3 = vector<vec2<T>>;
 template <class T> using priority_greater_queue = priority_queue<T, vector<T>, greater<T>>;
+template <class T, class U> using umap = unordered_map<T, U>;
+template <class T> using uset = unordered_set<T>;
 // number alias
 constexpr ll INFL = numeric_limits<ll>::max() / 4;
 constexpr array<ll, 4> DX4 = {1, 0, -1, 0};
